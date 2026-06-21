@@ -110,6 +110,13 @@
   .fab .wa{background:#25d366}.fab .tel{background:var(--rose-deep)}
 
   .ph{background:#fff3c4;color:#7a5b00;padding:1px 6px;border-radius:4px;font-size:.92em}
+
+  /* imágenes reales */
+  .hero-art{overflow:hidden}
+  .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .about-art{overflow:hidden}
+  .about-art img{width:100%;height:100%;object-fit:cover;display:block}
+  img.tile{object-fit:cover;width:100%;display:block}
 </style>
 </head>
 <body>
@@ -141,7 +148,7 @@
       </div>
     </div>
     <div class="hero-art">
-      <div class="emoji">💅</div>
+      <img class="hero-img" src="img/hero.jpg" alt="Manicure elegante en Chinitas Nails" />
       <div class="badge">⭐ <b>Atención personalizada</b><br>y ambiente relajante</div>
     </div>
   </div>
@@ -170,7 +177,7 @@
 <!-- NOSOTROS -->
 <section id="nosotros" class="about">
   <div class="wrap about-grid">
-    <div class="about-art">💖</div>
+    <div class="about-art"><img src="img/about.jpg" alt="Cuidado de uñas profesional" /></div>
     <div>
       <p class="eyebrow">Sobre nosotros</p>
       <h2>Un espacio para consentirte</h2>
@@ -186,13 +193,17 @@
     <div class="sec-head">
       <p class="eyebrow">Nuestro trabajo</p>
       <h2>Galería</h2>
-      <p>Algunos de nuestros diseños favoritos. <span class="ph">[Reemplaza con fotos reales de tu trabajo]</span></p>
+      <p>Inspiración de diseños. <span class="ph">[Fotos de referencia — reemplázalas por las de tu propio trabajo]</span></p>
     </div>
     <div class="gallery">
-      <div class="tile">Foto 1</div><div class="tile">Foto 2</div>
-      <div class="tile">Foto 3</div><div class="tile">Foto 4</div>
-      <div class="tile">Foto 5</div><div class="tile">Foto 6</div>
-      <div class="tile">Foto 7</div><div class="tile">Foto 8</div>
+      <img class="tile" src="img/g1.jpg" loading="lazy" alt="Diseño de uñas" />
+      <img class="tile" src="img/g2.jpg" loading="lazy" alt="Manicure elegante" />
+      <img class="tile" src="img/g3.jpg" loading="lazy" alt="Uñas con anillos dorados" />
+      <img class="tile" src="img/g4.jpg" loading="lazy" alt="Cuidado de uñas" />
+      <img class="tile" src="img/g5.jpg" loading="lazy" alt="Nail art" />
+      <img class="tile" src="img/g6.jpg" loading="lazy" alt="Diseño de uñas" />
+      <img class="tile" src="img/g7.jpg" loading="lazy" alt="Manicure" />
+      <img class="tile" src="img/g8.jpg" loading="lazy" alt="Uñas pintadas" />
     </div>
   </div>
 </section>
