@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chinitas Nails LLC — Salón de uñas</title>
+<meta name="description" content="Chinitas Nails LLC — manicure, pedicure, uñas acrílicas, gel y nail art. Tu belleza en cada detalle." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --rose:#d6829b; --rose-deep:#b5446a; --blush:#fbeef2; --cream:#fffafc;
+    --ink:#2b2230; --soft:#7c6f78; --gold:#c9a86a; --line:#f0dde4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:auto}
+  body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+  h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;line-height:1.15}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:500;font-size:15px;transition:.25s;cursor:pointer}
+  .btn-primary{background:var(--rose-deep);color:#fff;box-shadow:0 8px 24px rgba(181,68,106,.28)}
+  .btn-primary:hover{background:#9c3759;transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid var(--rose);color:var(--rose-deep);background:transparent}
+  .btn-ghost:hover{background:var(--blush)}
+  .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500}
+
+  /* NAV */
+  header{position:static;background:#fffafc;border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--rose-deep)}
+  .logo span{color:var(--gold)}
+  .nav-links{display:flex;gap:30px;font-size:15px}
+  .nav-links a:hover{color:var(--rose-deep)}
+  .nav-cta{padding:10px 20px;font-size:14px}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#fff 0%,var(--blush) 100%)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:80px 0 90px}
+  .hero h1{font-size:54px;letter-spacing:-1px}
+  .hero h1 em{font-style:italic;color:var(--rose-deep)}
+  .hero p.lead{font-size:18px;color:var(--soft);margin:22px 0 30px;max-width:480px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-art{aspect-ratio:1/1;border-radius:28px;background:
+    radial-gradient(circle at 30% 30%, #fff 0%, transparent 40%),
+    linear-gradient(135deg,var(--rose) 0%,#e7a9bd 50%,var(--gold) 130%);
+    box-shadow:0 12px 28px rgba(181,68,106,.18);display:flex;align-items:center;justify-content:center;position:relative}
+  .hero-art .emoji{font-size:120px}
+  .hero-art .badge{position:absolute;bottom:22px;left:22px;background:#fff;border-radius:16px;padding:12px 18px;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+  .hero-art .badge b{color:var(--rose-deep)}
+  @media(max-width:760px){.hero-grid{grid-template-columns:1fr;padding:50px 0 60px}.hero h1{font-size:40px}.hero-art{display:none}}
+
+  /* SECTIONS */
+  section{padding:80px 0}
+  .sec-head{text-align:center;max-width:620px;margin:0 auto 50px}
+  .sec-head h2{font-size:38px;margin:10px 0}
+  .sec-head p{color:var(--soft)}
+
+  /* SERVICES */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 26px;transition:.25s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(181,68,106,.12);border-color:var(--rose)}
+  .card .ic{font-size:34px;margin-bottom:14px}
+  .card h3{font-size:21px;margin-bottom:8px}
+  .card p{color:var(--soft);font-size:15px}
+  .card .price{margin-top:14px;color:var(--rose-deep);font-weight:600}
+
+  /* ABOUT */
+  .about{background:var(--blush)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .about-art{aspect-ratio:4/3;border-radius:24px;background:linear-gradient(135deg,#f3c6d5,var(--gold));display:flex;align-items:center;justify-content:center;font-size:90px;box-shadow:0 10px 24px rgba(181,68,106,.15)}
+  .about h2{font-size:36px;margin-bottom:16px}
+  .about p{color:var(--soft);margin-bottom:14px}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr}}
+
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .tile{aspect-ratio:1/1;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;text-align:center;padding:10px;background:linear-gradient(135deg,var(--rose),var(--gold))}
+  .tile:nth-child(2n){background:linear-gradient(135deg,#e7a9bd,#d6829b)}
+  .tile:nth-child(3n){background:linear-gradient(135deg,var(--gold),#e7a9bd)}
+
+  /* INFO (horario + contacto) */
+  .info{background:var(--ink);color:#fff}
+  .info .grid2{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+  .info h2{color:#fff;font-size:32px;margin-bottom:20px}
+  .info .row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12);color:#e9dde4}
+  .info .contact-item{display:flex;gap:14px;align-items:center;margin-bottom:18px;font-size:16px}
+  .info .contact-item .ic{font-size:24px}
+  .info .contact-item span b{display:block;color:#fff}.info .contact-item span small{color:#bfa9b6}
+  @media(max-width:760px){.info .grid2{grid-template-columns:1fr;gap:36px}}
+
+  /* CTA strip */
+  .cta-strip{background:linear-gradient(120deg,var(--rose-deep),var(--rose));text-align:center;color:#fff}
+  .cta-strip h2{color:#fff;font-size:34px;margin-bottom:10px}
+  .cta-strip p{opacity:.9;margin-bottom:26px}
+  .cta-strip .btn-primary{background:#fff;color:var(--rose-deep)}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#b9aab2;text-align:center;padding:30px 0;font-size:14px;border-top:1px solid rgba(255,255,255,.08)}
+  footer a{color:var(--rose)}
+
+  /* Floating buttons */
+  .fab{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:60}
+  .fab a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 10px 24px rgba(0,0,0,.2);transition:.2s}
+  .fab a:hover{transform:scale(1.08)}
+  .fab .wa{background:#25d366}.fab .tel{background:var(--rose-deep)}
+
+  .ph{background:#fff3c4;color:#7a5b00;padding:1px 6px;border-radius:4px;font-size:.92em}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <div class="wrap"><nav>
+    <div class="logo">Chinitas <span>Nails</span></div>
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank" class="btn btn-primary nav-cta">Reservar cita</a>
+  </nav></div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Salón de uñas · Nail Studio</p>
+      <h1>Tu belleza en <em>cada detalle</em></h1>
+      <p class="lead">En Chinitas Nails cuidamos tus manos y pies con productos de calidad, higiene impecable y diseños que enamoran.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank" class="btn btn-primary">Reservar cita</a>
+        <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="emoji">💅</div>
+      <div class="badge">⭐ <b>Atención personalizada</b><br>y ambiente relajante</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Lo que hacemos</p>
+      <h2>Nuestros servicios</h2>
+      <p>Una experiencia completa de cuidado y diseño para tus uñas.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="ic">💅</div><h3>Manicure clásico</h3><p>Limado, cutícula, hidratación y esmaltado prolijo.</p><div class="price">desde <span>$25</span></div></div>
+      <div class="card"><div class="ic">🦶</div><h3>Pedicure spa</h3><p>Exfoliación, masaje relajante y acabado impecable.</p><div class="price">desde <span>$35</span></div></div>
+      <div class="card"><div class="ic">✨</div><h3>Uñas acrílicas</h3><p>Extensiones resistentes con la forma y largo que quieras.</p><div class="price">desde <span>$50</span></div></div>
+      <div class="card"><div class="ic">💎</div><h3>Uñas de gel</h3><p>Brillo duradero y natural que cuida tu uña.</p><div class="price">desde <span>$45</span></div></div>
+      <div class="card"><div class="ic">🌟</div><h3>Powder dip (SNS)</h3><p>Color en polvo, resistente y sin lámpara. Larga duración.</p><div class="price">desde <span>$55</span></div></div>
+      <div class="card"><div class="ic">🎨</div><h3>Nail art &amp; diseños</h3><p>Diseños personalizados, pedrería y arte a tu estilo.</p><div class="price">desde <span>$15</span></div></div>
+    </div>
+    <p style="text-align:center;color:var(--soft);font-size:13px;margin-top:26px">Add-ons y retiro desde $10. <span class="ph">[Precios de referencia del mercado NY — ajústalos a los tuyos]</span></p>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="about">
+  <div class="wrap about-grid">
+    <div class="about-art">💖</div>
+    <div>
+      <p class="eyebrow">Sobre nosotros</p>
+      <h2>Un espacio para consentirte</h2>
+      <p>En <b>Chinitas Nails LLC</b> creemos que unas uñas bien cuidadas te hacen sentir segura y radiante. Por eso ofrecemos un trato cálido, herramientas esterilizadas y la última tendencia en diseños.</p>
+      <p>Ven y vive una experiencia relajante donde tú eres lo más importante. <span class="ph">[Cuéntanos aquí algo del salón: años de experiencia, especialidad, etc.]</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Nuestro trabajo</p>
+      <h2>Galería</h2>
+      <p>Algunos de nuestros diseños favoritos. <span class="ph">[Reemplaza con fotos reales de tu trabajo]</span></p>
+    </div>
+    <div class="gallery">
+      <div class="tile">Foto 1</div><div class="tile">Foto 2</div>
+      <div class="tile">Foto 3</div><div class="tile">Foto 4</div>
+      <div class="tile">Foto 5</div><div class="tile">Foto 6</div>
+      <div class="tile">Foto 7</div><div class="tile">Foto 8</div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO: HORARIO + CONTACTO -->
+<section id="contacto" class="info">
+  <div class="wrap grid2">
+    <div>
+      <h2>Horario</h2>
+      <div class="row"><span>Lunes – Viernes</span><span class="ph">9:00 am – 7:00 pm</span></div>
+      <div class="row"><span>Sábado</span><span class="ph">9:00 am – 6:00 pm</span></div>
+      <div class="row"><span>Domingo</span><span class="ph">Cerrado</span></div>
+    </div>
+    <div>
+      <h2>Contacto</h2>
+      <a class="contact-item" href="tel:+19296754354"><div class="ic">📞</div><span><b>929-675-4354</b><small>Llámanos</small></span></a>
+      <a class="contact-item" href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank"><div class="ic">💬</div><span><b>WhatsApp 929-675-4354</b><small>Reserva tu cita</small></span></a>
+      <a class="contact-item" href="mailto:chinitasnailsllc@gmail.com"><div class="ic">📧</div><span><b>chinitasnailsllc@gmail.com</b><small>Escríbenos</small></span></a>
+      <div class="contact-item"><div class="ic">📍</div><span><b class="ph">[Dirección del salón]</b><small>Nueva York</small></span></div>
+      <div class="contact-item"><div class="ic">📷</div><span><b class="ph">[@instagram]</b><small>Síguenos</small></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="wrap">
+    <h2>¿Lista para consentirte?</h2>
+    <p>Reserva tu cita hoy y luce unas uñas espectaculares.</p>
+    <a href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank" class="btn btn-primary">Reservar cita</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © 2026 Chinitas Nails LLC · Todos los derechos reservados<br/>
+    Hecho con 💖 — <a href="#">¿Necesitas ayuda con tu LLC o taxes? AC TAXPROS</a>
+  </div>
+</footer>
+
+<!-- Botones flotantes -->
+<div class="fab">
+  <a class="wa" href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank" title="WhatsApp" aria-label="WhatsApp">💬</a>
+  <a class="tel" href="tel:+19296754354" title="Llamar" aria-label="Llamar">📞</a>
+</div>
+
+</body>
+</html>
