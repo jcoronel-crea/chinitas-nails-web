@@ -4,7 +4,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Chinitas Nails LLC — Salón de uñas</title>
-<meta name="description" content="Chinitas Nails LLC — manicure, pedicure, uñas acrílicas, gel y nail art. Tu belleza en cada detalle." />
+<meta name="description" content="Chinitas Nails LLC — manicure, pedicure, uñas acrílicas, gel y nail art en Nueva York. Tu belleza en cada detalle." />
+<!-- Vista previa al compartir (WhatsApp / Facebook) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Chinitas Nails LLC — Salón de uñas" />
+<meta property="og:description" content="Manicure, pedicure, uñas acrílicas, gel y nail art en Nueva York. ¡Reserva tu cita!" />
+<meta property="og:image" content="https://jcoronel-crea.github.io/chinitas-nails-web/img/hero.jpg" />
+<meta property="og:url" content="https://jcoronel-crea.github.io/chinitas-nails-web/" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>💅</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -28,13 +36,16 @@
 
   /* NAV */
   header{position:static;background:#fffafc;border-bottom:1px solid var(--line)}
-  nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--rose-deep)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:14px}
+  .logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--rose-deep);white-space:nowrap}
   .logo span{color:var(--gold)}
-  .nav-links{display:flex;gap:30px;font-size:15px}
+  .nav-links{display:flex;gap:30px;font-size:15px;margin-left:auto}
   .nav-links a:hover{color:var(--rose-deep)}
+  .nav-right{display:flex;align-items:center;gap:12px}
   .nav-cta{padding:10px 20px;font-size:14px}
-  @media(max-width:760px){.nav-links{display:none}}
+  .lang{border:1.5px solid var(--line);background:#fff;color:var(--rose-deep);font-weight:600;font-size:13px;padding:7px 12px;border-radius:999px;cursor:pointer;font-family:'Poppins',sans-serif}
+  .lang:hover{border-color:var(--rose)}
+  @media(max-width:760px){.nav-links{display:none}.nav-cta{display:none}}
 
   /* HERO */
   .hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#fff 0%,var(--blush) 100%)}
@@ -43,12 +54,9 @@
   .hero h1 em{font-style:italic;color:var(--rose-deep)}
   .hero p.lead{font-size:18px;color:var(--soft);margin:22px 0 30px;max-width:480px}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-  .hero-art{aspect-ratio:1/1;border-radius:28px;background:
-    radial-gradient(circle at 30% 30%, #fff 0%, transparent 40%),
-    linear-gradient(135deg,var(--rose) 0%,#e7a9bd 50%,var(--gold) 130%);
-    box-shadow:0 12px 28px rgba(181,68,106,.18);display:flex;align-items:center;justify-content:center;position:relative}
-  .hero-art .emoji{font-size:120px}
-  .hero-art .badge{position:absolute;bottom:22px;left:22px;background:#fff;border-radius:16px;padding:12px 18px;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+  .hero-art{aspect-ratio:1/1;border-radius:28px;box-shadow:0 12px 28px rgba(181,68,106,.18);position:relative;overflow:hidden}
+  .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-art .badge{position:absolute;bottom:22px;left:22px;background:#fff;border-radius:16px;padding:12px 18px;font-size:13px;box-shadow:0 6px 18px rgba(0,0,0,.12);z-index:2}
   .hero-art .badge b{color:var(--rose-deep)}
   @media(max-width:760px){.hero-grid{grid-template-columns:1fr;padding:50px 0 60px}.hero h1{font-size:40px}.hero-art{display:none}}
 
@@ -62,7 +70,7 @@
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   @media(max-width:760px){.grid{grid-template-columns:1fr}}
   .card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 26px;transition:.25s}
-  .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(181,68,106,.12);border-color:var(--rose)}
+  .card:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(181,68,106,.12);border-color:var(--rose)}
   .card .ic{font-size:34px;margin-bottom:14px}
   .card h3{font-size:21px;margin-bottom:8px}
   .card p{color:var(--soft);font-size:15px}
@@ -71,7 +79,8 @@
   /* ABOUT */
   .about{background:var(--blush)}
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-  .about-art{aspect-ratio:4/3;border-radius:24px;background:linear-gradient(135deg,#f3c6d5,var(--gold));display:flex;align-items:center;justify-content:center;font-size:90px;box-shadow:0 10px 24px rgba(181,68,106,.15)}
+  .about-art{aspect-ratio:4/3;border-radius:24px;overflow:hidden;box-shadow:0 10px 24px rgba(181,68,106,.15)}
+  .about-art img{width:100%;height:100%;object-fit:cover;display:block}
   .about h2{font-size:36px;margin-bottom:16px}
   .about p{color:var(--soft);margin-bottom:14px}
   @media(max-width:760px){.about-grid{grid-template-columns:1fr}}
@@ -79,9 +88,16 @@
   /* GALLERY */
   .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   @media(max-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}}
-  .tile{aspect-ratio:1/1;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;text-align:center;padding:10px;background:linear-gradient(135deg,var(--rose),var(--gold))}
-  .tile:nth-child(2n){background:linear-gradient(135deg,#e7a9bd,#d6829b)}
-  .tile:nth-child(3n){background:linear-gradient(135deg,var(--gold),#e7a9bd)}
+  img.tile{aspect-ratio:1/1;border-radius:16px;object-fit:cover;width:100%;display:block}
+
+  /* REVIEWS */
+  .reviews{background:#fff}
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:760px){.reviews-grid{grid-template-columns:1fr}}
+  .review{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .review .stars{color:var(--gold);font-size:17px;margin-bottom:10px;letter-spacing:2px}
+  .review p{color:var(--ink);font-style:italic;margin-bottom:14px;font-size:15px}
+  .review .who{font-weight:600;color:var(--rose-deep);font-size:14px}
 
   /* INFO (horario + contacto) */
   .info{background:var(--ink);color:#fff}
@@ -105,18 +121,11 @@
 
   /* Floating buttons */
   .fab{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:60}
-  .fab a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 10px 24px rgba(0,0,0,.2);transition:.2s}
+  .fab a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 8px 20px rgba(0,0,0,.2);transition:.2s}
   .fab a:hover{transform:scale(1.08)}
   .fab .wa{background:#25d366}.fab .tel{background:var(--rose-deep)}
 
   .ph{background:#fff3c4;color:#7a5b00;padding:1px 6px;border-radius:4px;font-size:.92em}
-
-  /* imágenes reales */
-  .hero-art{overflow:hidden}
-  .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .about-art{overflow:hidden}
-  .about-art img{width:100%;height:100%;object-fit:cover;display:block}
-  img.tile{object-fit:cover;width:100%;display:block}
 </style>
 </head>
 <body>
@@ -126,12 +135,16 @@
   <div class="wrap"><nav>
     <div class="logo">Chinitas <span>Nails</span></div>
     <div class="nav-links">
-      <a href="#servicios">Servicios</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#galeria">Galería</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#servicios" data-en="Services">Servicios</a>
+      <a href="#nosotros" data-en="About">Nosotros</a>
+      <a href="#galeria" data-en="Gallery">Galería</a>
+      <a href="#resenas" data-en="Reviews">Reseñas</a>
+      <a href="#contacto" data-en="Contact">Contacto</a>
     </div>
-    <a href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank" class="btn btn-primary nav-cta">Reservar cita</a>
+    <div class="nav-right">
+      <button class="lang" id="langBtn" aria-label="English / Español">EN</button>
+      <a href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank" class="btn btn-primary nav-cta" data-en="Book now">Reservar cita</a>
+    </div>
   </nav></div>
 </header>
 
@@ -139,17 +152,17 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">Salón de uñas · Nail Studio</p>
-      <h1>Tu belleza en <em>cada detalle</em></h1>
-      <p class="lead">En Chinitas Nails cuidamos tus manos y pies con productos de calidad, higiene impecable y diseños que enamoran.</p>
+      <p class="eyebrow" data-en="Nail Salon · Nail Studio">Salón de uñas · Nail Studio</p>
+      <h1 data-en="Your beauty in <em>every detail</em>">Tu belleza en <em>cada detalle</em></h1>
+      <p class="lead" data-en="At Chinitas Nails we care for your hands and feet with quality products, impeccable hygiene and designs you'll love.">En Chinitas Nails cuidamos tus manos y pies con productos de calidad, higiene impecable y diseños que enamoran.</p>
       <div class="hero-cta">
-        <a href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank" class="btn btn-primary">Reservar cita</a>
-        <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+        <a href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank" class="btn btn-primary" data-en="Book now">Reservar cita</a>
+        <a href="#servicios" class="btn btn-ghost" data-en="View services">Ver servicios</a>
       </div>
     </div>
     <div class="hero-art">
       <img class="hero-img" src="img/hero.jpg" alt="Manicure elegante en Chinitas Nails" />
-      <div class="badge">⭐ <b>Atención personalizada</b><br>y ambiente relajante</div>
+      <div class="badge" data-en="⭐ <b>Personalized care</b><br>and a relaxing space">⭐ <b>Atención personalizada</b><br>y ambiente relajante</div>
     </div>
   </div>
 </section>
@@ -158,19 +171,19 @@
 <section id="servicios">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Lo que hacemos</p>
-      <h2>Nuestros servicios</h2>
-      <p>Una experiencia completa de cuidado y diseño para tus uñas.</p>
+      <p class="eyebrow" data-en="What we do">Lo que hacemos</p>
+      <h2 data-en="Our services">Nuestros servicios</h2>
+      <p data-en="A complete experience of care and design for your nails.">Una experiencia completa de cuidado y diseño para tus uñas.</p>
     </div>
     <div class="grid">
-      <div class="card"><div class="ic">💅</div><h3>Manicure clásico</h3><p>Limado, cutícula, hidratación y esmaltado prolijo.</p><div class="price">desde <span>$25</span></div></div>
-      <div class="card"><div class="ic">🦶</div><h3>Pedicure spa</h3><p>Exfoliación, masaje relajante y acabado impecable.</p><div class="price">desde <span>$35</span></div></div>
-      <div class="card"><div class="ic">✨</div><h3>Uñas acrílicas</h3><p>Extensiones resistentes con la forma y largo que quieras.</p><div class="price">desde <span>$50</span></div></div>
-      <div class="card"><div class="ic">💎</div><h3>Uñas de gel</h3><p>Brillo duradero y natural que cuida tu uña.</p><div class="price">desde <span>$45</span></div></div>
-      <div class="card"><div class="ic">🌟</div><h3>Powder dip (SNS)</h3><p>Color en polvo, resistente y sin lámpara. Larga duración.</p><div class="price">desde <span>$55</span></div></div>
-      <div class="card"><div class="ic">🎨</div><h3>Nail art &amp; diseños</h3><p>Diseños personalizados, pedrería y arte a tu estilo.</p><div class="price">desde <span>$15</span></div></div>
+      <div class="card"><div class="ic">💅</div><h3 data-en="Classic manicure">Manicure clásico</h3><p data-en="Filing, cuticle care, hydration and a flawless finish.">Limado, cutícula, hidratación y esmaltado prolijo.</p><div class="price"><span data-en="from">desde</span> <span>$25</span></div></div>
+      <div class="card"><div class="ic">🦶</div><h3 data-en="Spa pedicure">Pedicure spa</h3><p data-en="Exfoliation, relaxing massage and an impeccable finish.">Exfoliación, masaje relajante y acabado impecable.</p><div class="price"><span data-en="from">desde</span> <span>$35</span></div></div>
+      <div class="card"><div class="ic">✨</div><h3 data-en="Acrylic nails">Uñas acrílicas</h3><p data-en="Strong extensions in the shape and length you want.">Extensiones resistentes con la forma y largo que quieras.</p><div class="price"><span data-en="from">desde</span> <span>$50</span></div></div>
+      <div class="card"><div class="ic">💎</div><h3 data-en="Gel nails">Uñas de gel</h3><p data-en="Long-lasting, natural shine that protects your nail.">Brillo duradero y natural que cuida tu uña.</p><div class="price"><span data-en="from">desde</span> <span>$45</span></div></div>
+      <div class="card"><div class="ic">🌟</div><h3 data-en="Powder dip (SNS)">Powder dip (SNS)</h3><p data-en="Powder color, durable and lamp-free. Long lasting.">Color en polvo, resistente y sin lámpara. Larga duración.</p><div class="price"><span data-en="from">desde</span> <span>$55</span></div></div>
+      <div class="card"><div class="ic">🎨</div><h3 data-en="Nail art &amp; designs">Nail art &amp; diseños</h3><p data-en="Custom designs, rhinestones and art in your style.">Diseños personalizados, pedrería y arte a tu estilo.</p><div class="price"><span data-en="from">desde</span> <span>$15</span></div></div>
     </div>
-    <p style="text-align:center;color:var(--soft);font-size:13px;margin-top:26px">Add-ons y retiro desde $10. <span class="ph">[Precios de referencia del mercado NY — ajústalos a los tuyos]</span></p>
+    <p style="text-align:center;color:var(--soft);font-size:13px;margin-top:26px"><span data-en="Add-ons and removal from $10.">Add-ons y retiro desde $10.</span> <span class="ph">[Precios de referencia del mercado NY — ajústalos a los tuyos]</span></p>
   </div>
 </section>
 
@@ -179,10 +192,10 @@
   <div class="wrap about-grid">
     <div class="about-art"><img src="img/about.jpg" alt="Cuidado de uñas profesional" /></div>
     <div>
-      <p class="eyebrow">Sobre nosotros</p>
-      <h2>Un espacio para consentirte</h2>
-      <p>En <b>Chinitas Nails LLC</b> creemos que unas uñas bien cuidadas te hacen sentir segura y radiante. Por eso ofrecemos un trato cálido, herramientas esterilizadas y la última tendencia en diseños.</p>
-      <p>Ven y vive una experiencia relajante donde tú eres lo más importante. <span class="ph">[Cuéntanos aquí algo del salón: años de experiencia, especialidad, etc.]</span></p>
+      <p class="eyebrow" data-en="About us">Sobre nosotros</p>
+      <h2 data-en="A space to pamper yourself">Un espacio para consentirte</h2>
+      <p data-en="At <b>Chinitas Nails LLC</b> we believe well-cared nails make you feel confident and radiant. That's why we offer warm service, sterilized tools and the latest design trends.">En <b>Chinitas Nails LLC</b> creemos que unas uñas bien cuidadas te hacen sentir segura y radiante. Por eso ofrecemos un trato cálido, herramientas esterilizadas y la última tendencia en diseños.</p>
+      <p data-en="Come and enjoy a relaxing experience where you are what matters most.">Ven y vive una experiencia relajante donde tú eres lo más importante. <span class="ph">[Cuéntanos aquí algo del salón: años de experiencia, especialidad, etc.]</span></p>
     </div>
   </div>
 </section>
@@ -191,9 +204,9 @@
 <section id="galeria">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Nuestro trabajo</p>
-      <h2>Galería</h2>
-      <p>Inspiración de diseños. <span class="ph">[Fotos de referencia — reemplázalas por las de tu propio trabajo]</span></p>
+      <p class="eyebrow" data-en="Our work">Nuestro trabajo</p>
+      <h2 data-en="Gallery">Galería</h2>
+      <p><span data-en="Design inspiration.">Inspiración de diseños.</span> <span class="ph">[Fotos de referencia — reemplázalas por las de tu propio trabajo]</span></p>
     </div>
     <div class="gallery">
       <img class="tile" src="img/g1.jpg" loading="lazy" alt="Diseño de uñas" />
@@ -208,22 +221,50 @@
   </div>
 </section>
 
+<!-- RESEÑAS -->
+<section id="resenas" class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-en="What our clients say">Lo que dicen nuestras clientas</p>
+      <h2 data-en="Reviews">Reseñas</h2>
+      <p><span class="ph">[Reemplaza con reseñas reales de tus clientas / Google]</span></p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p data-en="&ldquo;Beautiful work and super clean place. My nails lasted for weeks!&rdquo;">&ldquo;Un trabajo precioso y un lugar súper limpio. ¡Mis uñas duraron semanas!&rdquo;</p>
+        <div class="who ph">[Nombre de clienta]</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p data-en="&ldquo;The best treatment, they pamper you from the moment you arrive. Highly recommended.&rdquo;">&ldquo;La mejor atención, te consienten desde que llegas. Muy recomendado.&rdquo;</p>
+        <div class="who ph">[Nombre de clienta]</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p data-en="&ldquo;I love their designs, always on trend. My favorite salon!&rdquo;">&ldquo;Me encantan sus diseños, siempre a la moda. ¡Mi salón favorito!&rdquo;</p>
+        <div class="who ph">[Nombre de clienta]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- INFO: HORARIO + CONTACTO -->
 <section id="contacto" class="info">
   <div class="wrap grid2">
     <div>
-      <h2>Horario</h2>
-      <div class="row"><span>Lunes – Viernes</span><span class="ph">9:00 am – 7:00 pm</span></div>
-      <div class="row"><span>Sábado</span><span class="ph">9:00 am – 6:00 pm</span></div>
-      <div class="row"><span>Domingo</span><span class="ph">Cerrado</span></div>
+      <h2 data-en="Hours">Horario</h2>
+      <div class="row"><span data-en="Monday – Friday">Lunes – Viernes</span><span class="ph">9:00 am – 7:00 pm</span></div>
+      <div class="row"><span data-en="Saturday">Sábado</span><span class="ph">9:00 am – 6:00 pm</span></div>
+      <div class="row"><span data-en="Sunday">Domingo</span><span class="ph" data-en="Closed">Cerrado</span></div>
     </div>
     <div>
-      <h2>Contacto</h2>
-      <a class="contact-item" href="tel:+19296754354"><div class="ic">📞</div><span><b>929-675-4354</b><small>Llámanos</small></span></a>
-      <a class="contact-item" href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank"><div class="ic">💬</div><span><b>WhatsApp 929-675-4354</b><small>Reserva tu cita</small></span></a>
-      <a class="contact-item" href="mailto:chinitasnailsllc@gmail.com"><div class="ic">📧</div><span><b>chinitasnailsllc@gmail.com</b><small>Escríbenos</small></span></a>
+      <h2 data-en="Contact">Contacto</h2>
+      <a class="contact-item" href="tel:+19296754354"><div class="ic">📞</div><span><b>929-675-4354</b><small data-en="Call us">Llámanos</small></span></a>
+      <a class="contact-item" href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank"><div class="ic">💬</div><span><b>WhatsApp 929-675-4354</b><small data-en="Book your appointment">Reserva tu cita</small></span></a>
+      <a class="contact-item" href="mailto:chinitasnailsllc@gmail.com"><div class="ic">📧</div><span><b>chinitasnailsllc@gmail.com</b><small data-en="Write to us">Escríbenos</small></span></a>
       <div class="contact-item"><div class="ic">📍</div><span><b class="ph">[Dirección del salón]</b><small>Nueva York</small></span></div>
-      <div class="contact-item"><div class="ic">📷</div><span><b class="ph">[@instagram]</b><small>Síguenos</small></span></div>
+      <div class="contact-item"><div class="ic">📷</div><span><b class="ph">[@instagram]</b><small data-en="Follow us">Síguenos</small></span></div>
     </div>
   </div>
 </section>
@@ -231,16 +272,16 @@
 <!-- CTA -->
 <section class="cta-strip">
   <div class="wrap">
-    <h2>¿Lista para consentirte?</h2>
-    <p>Reserva tu cita hoy y luce unas uñas espectaculares.</p>
-    <a href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank" class="btn btn-primary">Reservar cita</a>
+    <h2 data-en="Ready to treat yourself?">¿Lista para consentirte?</h2>
+    <p data-en="Book your appointment today and show off spectacular nails.">Reserva tu cita hoy y luce unas uñas espectaculares.</p>
+    <a href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank" class="btn btn-primary" data-en="Book now">Reservar cita</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    © 2026 Chinitas Nails LLC · Todos los derechos reservados<br/>
-    Hecho con 💖 — <a href="#">¿Necesitas ayuda con tu LLC o taxes? AC TAXPROS</a>
+    <span data-en="© 2026 Chinitas Nails LLC · All rights reserved">© 2026 Chinitas Nails LLC · Todos los derechos reservados</span><br/>
+    <span data-en="Made with 💖">Hecho con 💖</span> — <a href="#" data-en="Need help with your LLC or taxes? AC TAXPROS">¿Necesitas ayuda con tu LLC o taxes? AC TAXPROS</a>
   </div>
 </footer>
 
@@ -249,6 +290,27 @@
   <a class="wa" href="https://wa.me/19296754354?text=Hola!%20Quiero%20reservar%20una%20cita%20en%20Chinitas%20Nails" target="_blank" title="WhatsApp" aria-label="WhatsApp">💬</a>
   <a class="tel" href="tel:+19296754354" title="Llamar" aria-label="Llamar">📞</a>
 </div>
+
+<script>
+  // Botón Inglés/Español — ligero, solo corre al hacer clic.
+  (function(){
+    var btn = document.getElementById('langBtn');
+    var lang = 'es';
+    btn.addEventListener('click', function(){
+      lang = (lang === 'es') ? 'en' : 'es';
+      document.documentElement.lang = lang;
+      btn.textContent = (lang === 'es') ? 'EN' : 'ES';
+      document.querySelectorAll('[data-en]').forEach(function(el){
+        if (lang === 'en'){
+          if (el.getAttribute('data-es') === null) el.setAttribute('data-es', el.innerHTML);
+          el.innerHTML = el.getAttribute('data-en');
+        } else if (el.getAttribute('data-es') !== null){
+          el.innerHTML = el.getAttribute('data-es');
+        }
+      });
+    });
+  })();
+</script>
 
 </body>
 </html>
