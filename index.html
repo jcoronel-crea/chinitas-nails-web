@@ -108,6 +108,11 @@
   .promo .txt{font-size:16px;font-weight:500}
   .promo a{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.6);color:#fff;padding:9px 18px;border-radius:999px;font-size:14px;font-weight:500;white-space:nowrap}
   .promo a:hover{background:#fff;color:var(--rose-deep)}
+  /* Móvil: apilar la promo y mantener el texto centrado y estrecho para que el botón flotante de WhatsApp no lo tape */
+  @media(max-width:760px){
+    .promo .wrap{flex-direction:column;gap:12px;padding:18px 20px 22px}
+    .promo .txt{max-width:88%;line-height:1.4}
+  }
 
   /* SECTIONS */
   section{padding:80px 0}
@@ -192,6 +197,7 @@
   .fab a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 8px 20px rgba(0,0,0,.2);transition:.2s}
   .fab a:hover{transform:scale(1.08)}
   .fab .wa{background:#25d366}.fab .tel{background:var(--rose-deep)}
+  @media(max-width:760px){.fab{right:14px;bottom:14px;gap:10px}.fab a{width:50px;height:50px;font-size:23px}}
 </style>
 </head>
 <body>
